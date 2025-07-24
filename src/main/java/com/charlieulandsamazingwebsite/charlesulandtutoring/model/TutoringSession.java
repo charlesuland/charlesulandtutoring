@@ -22,9 +22,9 @@ public class TutoringSession {
 
 
 
-    protected TutoringSession() {}
+    public TutoringSession() {}
 
-    public TutoringSession(String date, String time , TutoringClass course) {
+    public TutoringSession(String date, String time) {
         this.date = date;
         this.time = time;
 

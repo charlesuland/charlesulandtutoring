@@ -2,6 +2,9 @@ package com.charlieulandsamazingwebsite.charlesulandtutoring.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 
 @Entity
 @Table(name = "app_user")
@@ -15,13 +18,17 @@ public class User {
     private String lastName;
     private String email;
     private String phoneNumber;
-
     private String hashPassword;
     private String dateJoined;
     private String role = "student";
-    private String yearInSchool;
 
-    public User() {}
+
+    public User() {
+        LocalDate date = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM dd, yyyy");
+
+        this.dateJoined = date.format(formatter);
+    }
 
     public User(String firstName, String lastName, String email, String phoneNumber, String password) {
         this.firstName = firstName;
@@ -31,8 +38,10 @@ public class User {
         this.phoneNumber = phoneNumber;
         //update password
         this.hashPassword = password;
-        this.dateJoined = "1";
-        this.yearInSchool = yearInSchool;
+        LocalDate date = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM dd, yyyy");
+
+        this.dateJoined = date.format(formatter);
     }
 
     public Integer getId() {
@@ -88,11 +97,4 @@ public class User {
         this.role = role;
     }
 
-    public String getYearInSchool() {
-        return yearInSchool;
-    }
-
-    public void setYearInSchool(String yearInSchool) {
-        this.yearInSchool = yearInSchool;
-    }
 }

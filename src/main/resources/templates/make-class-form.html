@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Make a class</title>
+</head>
+<body>
+    <form th:action="@{/make-class}" method="post" th:object="${ts}">
+        <input type="text" th:field="*{date}"/>
+        <input type="text" th:field="*{time}"/>
+
+        <input type="submit" value="Submit"/>
+    </form>
+    <p th:text="${message}"/>
+</body>
+</html>
