@@ -1,15 +1,15 @@
 package com.charlieulandsamazingwebsite.charlesulandtutoring.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
 
 @Entity
+@Table(name = "app_user")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "app_user_seq")
+    @SequenceGenerator(name = "app_user_seq", sequenceName = "app_user_seq", allocationSize = 1)
     private Integer id;
     private String firstName;
     private String lastName;

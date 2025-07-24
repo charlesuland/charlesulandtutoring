@@ -1,4 +1,4 @@
-package com.charlieulandsamazingwebsite.charlesulandtutoring.model;
+package com.charlieulandsamazingwebsite.charlesulandtutoring.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
     @GetMapping("/")
     public String index() {
-        System.out.println("index");
         return "index"; // returns index.html or index.html in templates
     }
 }

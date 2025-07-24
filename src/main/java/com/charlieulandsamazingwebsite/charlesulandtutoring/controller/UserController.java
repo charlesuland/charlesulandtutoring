@@ -17,8 +17,10 @@ public class UserController {
 
 
     @PostMapping("/add-user")
-    public void addUser(@ModelAttribute User user) {
-
+    public String addUser(@ModelAttribute User user, Model model) {
+        model.addAttribute("user1", user);
+        userService.addUser(user);
+        return "user-added";
     }
 
     @GetMapping("/user-form")
@@ -26,4 +28,13 @@ public class UserController {
         model.addAttribute("user", new User());
         return "form";
     }
+    @GetMapping("/all_users")
+    public String allUsers(Model model) {
+        model.addAttribute("users", userService.allUsers());
+        return "all-users";
+    }
+
+
+
+
 }

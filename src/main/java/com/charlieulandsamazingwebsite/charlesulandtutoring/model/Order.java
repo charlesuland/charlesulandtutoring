@@ -8,7 +8,7 @@ public class Order {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "app_user_id")
     private User user;
     private Integer subtotal;
     private Integer total;
