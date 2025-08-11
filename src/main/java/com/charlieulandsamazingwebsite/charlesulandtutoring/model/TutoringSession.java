@@ -1,10 +1,6 @@
 package com.charlieulandsamazingwebsite.charlesulandtutoring.model;
 
 import jakarta.persistence.*;
-import org.w3c.dom.html.HTMLImageElement;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 public class TutoringSession {
@@ -12,39 +8,34 @@ public class TutoringSession {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String date;
+    private int year;
+    private int month;
+    private int day;
     private String time;
-
+    private String description;
     private String zoomLink;
+    private boolean visibleToStudents = false;
 
-    private int totalSpace = 8;
-    private boolean valid = true;
-
+    @ManyToOne
+    private TutoringClass tutoringClass;
 
 
     public TutoringSession() {}
 
-    public TutoringSession(String date, String time) {
-        this.date = date;
-        this.time = time;
-
-
+    public TutoringSession(TutoringClass tutoringClass, int year, int month, int day) {
+        this.tutoringClass = tutoringClass;
+        this.year = year;
+        this.month = month;
+        this.day = day;
     }
+
 
     //need a way to generate a zoom link but that will probably be for the service to do.
 
     public int getId() {
         return id;
     }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
+    public void setId(int id) {this.id =id;}
     public String getTime() {
         return time;
     }
@@ -61,19 +52,47 @@ public class TutoringSession {
         this.zoomLink = zoomLink;
     }
 
-    public int getTotalSpace() {
-        return totalSpace;
+    public boolean isVisibleToStudents() {
+        return visibleToStudents;
     }
 
-    public void setTotalSpace(int totalSpace) {
-        this.totalSpace = totalSpace;
+    public void setVisibleToStudents(boolean valid) {
+        this.visibleToStudents = valid;
     }
 
-    public boolean isValid() {
-        return valid;
+    public String getDescription() {
+        return description;
     }
 
-    public void setValid(boolean valid) {
-        this.valid = valid;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public TutoringClass getTutoringClass() {
+        return tutoringClass;
     }
 }

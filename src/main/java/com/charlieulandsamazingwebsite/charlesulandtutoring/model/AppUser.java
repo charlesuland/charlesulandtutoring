@@ -1,6 +1,8 @@
 package com.charlieulandsamazingwebsite.charlesulandtutoring.model;
 
 import jakarta.persistence.*;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -8,36 +10,25 @@ import java.time.format.DateTimeFormatter;
 
 @Entity
 @Table(name = "app_user")
-public class User {
+public class AppUser {
 
+    //maybe name this student
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "app_user_seq")
     @SequenceGenerator(name = "app_user_seq", sequenceName = "app_user_seq", allocationSize = 1)
     private Integer id;
     private String firstName;
     private String lastName;
+
+    @Column(nullable = false, unique = true)
     private String email;
-    private String phoneNumber;
+
     private String hashPassword;
     private String dateJoined;
-    private String role = "student";
+    private String role = "STUDENT";
 
-
-    public User() {
-        LocalDate date = LocalDate.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM dd, yyyy");
-
-        this.dateJoined = date.format(formatter);
-    }
-
-    public User(String firstName, String lastName, String email, String phoneNumber, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        //update password
-        this.hashPassword = password;
+    //change the string to a local date
+    public AppUser() {
         LocalDate date = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM dd, yyyy");
 
@@ -73,14 +64,9 @@ public class User {
         this.email = email;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public void setHashPassword(String password) {
+        this.hashPassword = password;
     }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
     public String getHashPassword() {
         return hashPassword;
     }

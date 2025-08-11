@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Register</title>
+    <link th:href="@{/css/logins.css}" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<main class="main">
+    <div class="container1">
+        <div class="container2">
+            <div class="container3">
+                <div class="register-box">
+                    <div class="header">
+                        <a href="/" class="logo-in-header">
+                            <span class="first-logo-text">CHARLES ULAND</span><span
+                                class="second-logo-text">TUTORING</span>
+                        </a>
+
+                        <h1>Register</h1>
+                    </div>
+                    <div class="form">
+
+                        <form th:action="@{/register-an-account}" method="post" th:object="${user}">
+                            <div class="before-login">
+                                <div class="label-input">
+                                    <label>First Name</label>
+                                    <input class="text-input" type="text" th:field="*{firstName}"/>
+                                </div>
+                                <div class="label-input">
+                                    <label>Last Name</label>
+                                    <input class="text-input" type="text" th:field="*{lastName}"/>
+                                </div>
+                                <div class="label-input">
+                                    <label>Email</label>
+                                    <input class="text-input" type="email" th:field="*{email}"/>
+                                </div>
+                                <div class="label-input">
+                                    <label>Password</label>
+                                    <input class="text-input" type="password" th:field="*{password}"/>
+                                </div>
+                                <div class="label-input">
+                                    <label>Confirm Password</label>
+                                    <input class="text-input" type="password" th:field="*{confirmPassword}"/>
+                                </div>
+
+
+
+
+                                <div class="options">
+                                    <p>Already have an account?<a href="/login">Sign in here.</a></p>
+                                </div>
+                            </div>
+
+                            <div class="login">
+                                <button class="login-button" type="submit">Register</button>
+                            </div>
+
+                            <div th:if="${param.registerSuccess}">
+                                <p style="color: green;">Registration Successful! You can now log in.</p>
+                            </div>
+                            <div th:if="${passwordError}" class="error">
+                                <p th:text="${passwordError}"></p>
+                            </div>
+                            <div th:if="${emailError}" class="error">
+                                <p th:text="${emailError}"></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

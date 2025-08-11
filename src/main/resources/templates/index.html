@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,13 +7,16 @@
     <title>Your Page Title</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <!-- Google Fonts (Optional) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 
     <!-- External CSS (Optional) -->
-    <link rel="stylesheet" href="../static/styles.css" />
+    <link rel="stylesheet" href="../static/css/styles.css" />
 
     <!-- Inline CSS (Optional) -->
     <style>
@@ -33,9 +36,13 @@
 
 <main>
     <p>This is your boilerplate.</p>
-    <a href="user-form">user form</a>
+    <a href="/register-an-account">register</a>
     <a href="my-meetings">My Meetings</a>
-    <a href="all_users">all users</a>
+    <a th:href="@{/whatevertf}">all users</a>
+    <a href="/admin/make-a-class-form">Make class</a>
+    <form th:action="@{/logout}" th:method="post">
+        <button type="submit">Logout</button>
+    </form>
 </main>
 
 <footer>
