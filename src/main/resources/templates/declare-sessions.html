@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Make Sessions</title>
+</head>
+<body>
+<!-- Bind the form to the wrapper object -->
+<form th:action="@{/admin/submit-sessions}" method="post" th:object="${sessionWrapper}">
+    <div th:each="tutoringSession, stat : *{sessions}"> <!-- Iterate over the list within the wrapper -->
+        <h3>Session #<span th:text="${stat.index + 1}"></span></h3>
+
+        <label th:for="${'time' + stat.index}">Time</label>
+        <input type="text" th:id="${'time' + stat.index}" th:field="*{sessions[__${stat.index}__].time}">
+
+        <label th:for="${'desc' + stat.index}">Description (topic)</label>
+        <input type="text" th:id="${'desc' + stat.index}" th:field="*{sessions[__${stat.index}__].description}">
+
+        <label th:for="${'link' + stat.index}">Zoom Link</label>
+        <input type="text" th:id="${'link' + stat.index}" th:field="*{sessions[__${stat.index}__].zoomLink}">
+
+        <label th:for="${'desc' + stat.index}">Zoom Password</label>
+        <input type="text" th:id="${'desc' + stat.index}" th:field="*{sessions[__${stat.index}__].zoomPassword}">
+
+        <input type="hidden" th:field="*{sessions[__${stat.index}__].id}">
+        <br><br>
+
+    </div>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:fragment="content">
+    <div class="everything-but-navbar">
+        <div class="hero">
+            <div class="hero-overlay">
+
+                <div class="hero-text">
+                    <h1>Book now. Stress less.</h1>
+                    <p>Find a class today!</p>
+                    <button>Book now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="eta-images">
+            <div class="eta-group">
+                <i class="fa-solid fa-award fa-2x"></i>
+                <h2>Effective</h2>
+                <p>Every session is carefully structured to maximize your progress.</p>
+            </div>
+            <div class="eta-group">
+                <i class="fa-solid fa-coins fa-2x"></i>
+                <h2>Affordable</h2>
+                <p>High-impact tutoring without draining your wallet.</p>
+            </div>
+            <div class="eta-group">
+                <i class="fa-solid fa-clock fa-2x"></i>
+                <h2>Timely</h2>
+                <p>Weekly classes at the time of your choice.</p>
+            </div>
+        </div>
+
+        <div class="this-is-how-it-works">
+            <h2>This is how it works</h2>
+            <div class="line-container">
+                <svg viewBox="0 0 830 100" preserveAspectRatio="xMidYMid meet">
+                    <!-- Connecting line -->
+                    <line x1="160" y1="50" x2="380" y2="50" stroke="#FDBA3C" stroke-width="6"/>
+                    <line x1="450" y1="50" x2="670" y2="50" stroke="#FDBA3C" stroke-width="6"/>
+
+                    <!-- Step 1 -->
+                    <circle cx="125" cy="50" r="25" fill="#FDBA3C"/>
+                    <text x="125" y="56" text-anchor="middle" fill="white" font-size="20" font-weight="bold">1</text>
+
+                    <!-- Step 2 -->
+                    <circle cx="415" cy="50" r="25" fill="#FDBA3C"/>
+                    <text x="415" y="56" text-anchor="middle" fill="white" font-size="20" font-weight="bold">2</text>
+
+                    <!-- Step 3 -->
+                    <circle cx="705" cy="50" r="25" fill="#FDBA3C"/>
+                    <text x="705" y="56" text-anchor="middle" fill="white" font-size="20" font-weight="bold">3</text>
+                </svg>
+            </div>
+
+            <div class="how-it-works-text-container">
+
+                <div class="how-it-works-step">
+                    <div class="circle">1</div>
+                    <div class="how-it-works-content">
+                        <h3>Pick the perfect class</h3>
+                        <p>Select the subject and schedule that fits you best.</p>
+                    </div>
+                </div>
+                <div class="how-it-works-step">
+                    <div class="circle">2</div>
+                    <div class="how-it-works-content">
+                        <h3>Secure your spot</h3>
+                        <p>Enroll in a class to reserve your spot.</p>
+                    </div>
+                </div>
+                <div class="how-it-works-step">
+                    <div class="circle">3</div>
+                    <div class="how-it-works-content">
+                        <h3>Step into class</h3>
+                        <p>We’ll send you the meeting link straight to your inbox on the day of your class.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="referral-container">
+            <h2>Testimonials</h2>
+            <div class="extra-card-container" id="testimonial-cards-containerrrr">
+                <div class="testimonial-cards-container">
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">I was taking a class I did not like for my CS minor. It was my first semester studying in America and I did not know
+                                anyone to help me. Thankfully, I met Charlie, and he took time to answer all my questions with patience. Muy bien!!
+                            </p>
+                        </div>
+                        <p class="text-weight-semibold">Sofía Blanco (Data Analyst at EY)</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">I definitely could not have done my chemistry class without Charlie's help, definitely worth it!</p>
+                        </div>
+                        <p class="text-weight-semibold">Leah Jesse (UofL School of Dentistry '28)</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">I needed help with my calculus class, and Charlie was there to help me. I did better
+                            on my tests and definitely want to recommend him to other people.</p>
+                        </div>
+                        <p class="text-weight-semibold">Andrew Hester</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">Very professional but super personable. It felt great working along side Charlie to get my grades back up!</p>
+                        </div>
+                        <p class="text-weight-semibold">Trenton Hamilton</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">When I couldn't understand my professor, my friend got me in contact with Charlie. I immediately noticed a difference
+                            in how well I picked up the content. I would recommend him to anyone else who needs help in chemistry.</p>
+                        </div>
+                        <p class="text-weight-semibold">Ashley Patkovic</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">Math used to stress me out, but now I feel confident going into tests. Tutoring made a huge difference.
+                                I don’t panic over homework anymore, and I actually understand what my teacher is talking about in class.</p>
+                        </div>
+                        <p class="text-weight-semibold">Carter Hutcheson</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">Charlie has helped me become better in my classes and taught me how to actually study. I wouldn't go with anyone else!</p>
+                        </div>
+                        <p class="text-weight-semibold">Alex Compton</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">He really breaks down the content well and helped me do better in chemistry. The class had
+                            me a little overwhelmed, but Charlie slowed things down in a manageable way!</p>
+                        </div>
+                        <p class="text-weight-semibold">Riley Burroughs (LMU College of Dentistry '28)</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">I was nervous about online tutoring at first, but the Zoom lessons worked great! I could share my screen,
+                                work through problems step by step, and ask questions just like in person. I didn't just learn chemistry, I learned how to learn better.</p>
+                        </div>
+                        <p class="text-weight-semibold">Jonah Hall</p>
+                    </div>
+                </div>
+                <div class="testimonial-cards-container">
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">I was taking a class I did not like for my CS minor. It was my first semester studying in America and I did not know
+                                anyone to help me. Thankfully, I met Charlie, and he took time to answer all my questions with patience. Muy bien!!
+                            </p>
+                        </div>
+                        <p class="text-weight-semibold">Sofía Blanco (Data Analyst at EY)</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">I definitely could not have done my chemistry class without Charlie's help, definitely worth it!</p>
+                        </div>
+                        <p class="text-weight-semibold">Leah Jesse (UofL School of Dentistry '28)</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">I needed help with my calculus class, and Charlie was there to help me. I did better
+                                on my tests and definitely want to recommend him to other people.</p>
+                        </div>
+                        <p class="text-weight-semibold">Andrew Hester</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">Very professional but super personable. It felt great working along side Charlie to get my grades back up!</p>
+                        </div>
+                        <p class="text-weight-semibold">Trenton Hamilton</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">When I couldn't understand my professor, my friend got me in contact with Charlie. I immediately noticed a difference
+                                in how well I picked up the content. I would recommend him to anyone else who needs help in chemistry.</p>
+                        </div>
+                        <p class="text-weight-semibold">Ashley Patkovic</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">Math used to stress me out, but now I feel confident going into tests. Tutoring made a huge difference.
+                                I don’t panic over homework anymore, and I actually understand what my teacher is talking about in class.</p>
+                        </div>
+                        <p class="text-weight-semibold">Carter Hutcheson</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">Charlie has helped me become better in my classes and taught me how to actually study. I wouldn't go with anyone else!</p>
+                        </div>
+                        <p class="text-weight-semibold">Alex Compton</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">He really breaks down the content well and helped me do better in chemistry. The class had
+                                me a little overwhelmed, but Charlie slowed things down in a manageable way!</p>
+                        </div>
+                        <p class="text-weight-semibold">Riley Burroughs (LMU College of Dentistry '28)</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">I was nervous about online tutoring at first, but the Zoom lessons worked great! I could share my screen,
+                                work through problems step by step, and ask questions just like in person. I didn't just learn chemistry, I learned how to learn better.</p>
+                        </div>
+                        <p class="text-weight-semibold">Jonah Hall</p>
+                    </div>
+                </div>
+                <div class="testimonial-cards-container">
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">I was taking a class I did not like for my CS minor. It was my first semester studying in America and I did not know
+                                anyone to help me. Thankfully, I met Charlie, and he took time to answer all my questions with patience. Muy bien!!
+                            </p>
+                        </div>
+                        <p class="text-weight-semibold">Sofía Blanco (Data Analyst at EY)</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">I definitely could not have done my chemistry class without Charlie's help, definitely worth it!</p>
+                        </div>
+                        <p class="text-weight-semibold">Leah Jesse (UofL School of Dentistry '28)</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">I needed help with my calculus class, and Charlie was there to help me. I did better
+                                on my tests and definitely want to recommend him to other people.</p>
+                        </div>
+                        <p class="text-weight-semibold">Andrew Hester</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">Very professional but super personable. It felt great working along side Charlie to get my grades back up!</p>
+                        </div>
+                        <p class="text-weight-semibold">Trenton Hamilton</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">When I couldn't understand my professor, my friend got me in contact with Charlie. I immediately noticed a difference
+                                in how well I picked up the content. I would recommend him to anyone else who needs help in chemistry.</p>
+                        </div>
+                        <p class="text-weight-semibold">Ashley Patkovic</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">Math used to stress me out, but now I feel confident going into tests. Tutoring made a huge difference.
+                                I don’t panic over homework anymore, and I actually understand what my teacher is talking about in class.</p>
+                        </div>
+                        <p class="text-weight-semibold">Carter Hutcheson</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">Charlie has helped me become better in my classes and taught me how to actually study. I wouldn't go with anyone else!</p>
+                        </div>
+                        <p class="text-weight-semibold">Alex Compton</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">He really breaks down the content well and helped me do better in chemistry. The class had
+                                me a little overwhelmed, but Charlie slowed things down in a manageable way!</p>
+                        </div>
+                        <p class="text-weight-semibold">Riley Burroughs (LMU College of Dentistry '28)</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars-and-words">
+                            <div class="stars">
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                                <i class="fas fa-star fa-lg"></i>
+                            </div>
+                            <p class="testimonial-text">I was nervous about online tutoring at first, but the Zoom lessons worked great! I could share my screen,
+                                work through problems step by step, and ask questions just like in person. I didn't just learn chemistry, I learned how to learn better.</p>
+                        </div>
+                        <p class="text-weight-semibold">Jonah Hall</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="find-the-right-class-container">
+            <div class="find-the-right-class">
+                <h3>Find the right class for you</h3>
+                <p>Science doesn’t have to be confusing. Let’s make it make sense.</p>
+                <a th:href="@{/classes}">See Classes</a>
+
+            </div>
+        </div>
+        <div class="find-the-right-class-container">
+            <div class="find-the-right-class">
+                <h3>Need a study guide?</h3>
+                <p>The right resources at the right time can help any student succeed.</p>
+                <a th:href="@{/study-resources}">See resources</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

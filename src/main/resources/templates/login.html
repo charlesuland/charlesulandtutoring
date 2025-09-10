@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <link th:href="@{/css/logins.css}" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<main class="main">
+    <div class="container1">
+        <div class="container2">
+            <div class="container3">
+                <div class="login-box">
+                    <div class="header">
+                        <a href="/" class="logo-in-header">
+                            <span class="first-logo-text">CHARLES ULAND</span><span
+                                class="second-logo-text">TUTORING</span>
+                        </a>
+
+                        <h1>Login</h1>
+                    </div>
+                    <div class="form">
+
+                        <form th:action="@{/login}" method="post">
+                            <div class="before-login">
+                                <div class="label-input">
+                                    <label>Email</label>
+                                    <input class="text-input" type="text" name="username"/>
+                                </div>
+                                <div class="label-input">
+                                    <label>Password</label>
+                                    <input class="text-input" type="password" name="password"/>
+                                </div>
+                                <div class="options">
+                                    <p>New here? <a href="/register-an-account">Register an account!</a></p>
+                                    <a href="/forgot-password">Forgot your password?</a>
+                                </div>
+                            </div>
+
+                            <div class="login">
+                                <button class="login-button" type="submit">Login</button>
+                            </div>
+
+                            <div th:if="${param.error}">
+                                <p style="color: red;">Incorrect email or password.</p>
+                            </div>
+                            <div th:if="${param.logout}">
+                                <p style="color: green;">You have been logged out</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${pageTitle} ?: 'My Site'"></title>
+    <link rel="stylesheet" th:href="@{/css/layout.css}">
+    <link rel="stylesheet" th:if="${pageStyles}" th:href="@{${pageStyles}}">
+    <script src="https://kit.fontawesome.com/0399362fc8.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="big-navbar">
+    <div class="navbar">
+        <a th:href="@{/}" class="logo-in-navbar">
+            <i class="fas fa-book fa-lg"></i>
+            <span class="first-logo-text">CHARLES ULAND</span><span class="second-logo-text">TUTORING</span>
+        </a>
+        <div class="navbar-links">
+            <ul class="ul-links">
+                <li><a th:href="@{/classes}">Classes</a></li>
+                <li><a th:href="@{/study-resources}">Resources</a></li>
+                <li><a th:href="@{/about}">About</a></li>
+                <li><a th:href="@{/faqs}">FAQs</a></li>
+            </ul>
+        </div>
+        <div class="navbar-login">
+            <a href="">Tutor Login</a>
+        </div>
+        <div class="hamburger-icon">
+            <i class="fas fa-bars fa-lg " onclick="toggleviz()"></i>
+        </div>
+    </div>
+    <div class="shrunk-links-and-login">
+        <div class="shrunk-navbar-links">
+            <ul>
+                <li><a th:href="@{/classes}">Classes</a></li>
+                <li><a th:href="@{/study-resources}">Resources</a></li>
+                <li><a th:href="@{/about}">About</a></li>
+                <li><a th:href="@{/faqs}">FAQs</a></li>
+            </ul>
+        </div>
+        <div class="navbar-login shrunk">
+            <a href="">Tutor Login</a>
+        </div>
+    </div>
+    <script>
+        function toggleviz() {
+            document.querySelector(".shrunk-links-and-login").classList.toggle("show");
+        }
+    </script>
+
+</div>
+
+<main class="main">
+    <div th:replace="~{${view} :: content}"></div>
+
+
+    <footer>
+        <div class="footer-group">
+            <p>&copy; 2025 Charles Uland Tutoring. All rights reserved.</p>
+            <p>Website designed and developed by Charles Uland.</p>
+        </div>
+
+        <nav class="footer-group">
+            <a th:href="@{/}">Home</a>
+            <a th:href="@{/classes}">Classes</a>
+            <a th:href="@{/study-resources}">Resources</a>
+            <a th:href="@{/about}">About</a>
+            <a th:href="@{/faqs}">FAQs</a>
+        </nav>
+
+        <div class="footer-group">
+            <p>Charles Uland Tutoring is committed to providing high quality tutoring and study resources at an affordable price.</p>
+        </div>
+
+    </footer>
+</main>
+
+
+</body>
+</html>

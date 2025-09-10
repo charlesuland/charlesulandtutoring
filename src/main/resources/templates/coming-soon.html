@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Title</title>
+    <link href="/css/" rel="stylesheet"/>
+</head>
+<body>
+    <div th:fragment="content">
+        <div class="big-container">
+            <div class="container">
+                <h3 class="coming-soon">Coming soon</h3>
+
+                <a th:href="@{/}" class="go-home-button">Go Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

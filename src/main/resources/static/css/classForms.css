@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+body {
+    font-family: 'Archivo', sans-serif;
+    min-height: 100vh;
+    background-color: #f4f5f8;
+
+}
+
+.form {
+    background-color: white;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 10% auto;
+    border: 1px black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+input, select {
+    width: 20%;
+
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+
+

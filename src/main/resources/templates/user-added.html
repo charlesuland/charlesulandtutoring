@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>User Added</h1>
+    <p th:text="'id ' + ${user1.firstName}"/>
+    <p th:text="'date joined: ' + ${user1.getDateJoined()}"/>
+</body>
+</html>

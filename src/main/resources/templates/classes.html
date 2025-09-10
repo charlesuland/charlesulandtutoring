@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<body>
+
+<div th:fragment="content">
+    <div class="page-container">
+        <div class="need-to-know-container">
+            <div class="need-to-know-content">
+
+                <h3 class="ntk-h3">What you need to know</h3>
+                <ul class="ntk-ul">
+                    <li class="ntk-li">You can sign up for classes below</li>
+                    <li class="ntk-li">Your Zoom link will be sent straight to the email you use at checkout</li>
+                    <li class="ntk-li">Each class is carefully planned with clear lessons and practice problems</li>
+                    <li class="ntk-li">Classes are offered in affordable monthly packages</li>
+                    <li class="ntk-li">If you join mid-month, you’ll only pay for the classes ahead</li>
+                    <li class="ntk-li">Miss a class? No worries — recordings are available so you never fall behind</li>
+                    <li class="ntk-li">All you need is Zoom and a good internet connection to get started</li>
+                </ul>
+            </div>
+        </div>
+        <div class="month-container">
+            <div class="this-month-header">
+                <h2 class="this-month-text" th:text="${thisMonth} + ' Classes'"></h2>
+                <div class="month-spacer"></div>
+            </div>
+
+
+            <div class="class-card-container">
+                <div class="card-wrap" th:each="classInfo, stat : ${thisMonthsClasses}">
+                    <div th:class="'card-header card-' +${stat.count % 4 + 1}">
+                        <i th:class="'fas fa-' + ${classInfo.get(0)}"></i>
+                    </div>
+                    <div class="card-content">
+                        <h1 class="card-title" th:text="${classInfo.get(1)}"></h1>
+                        <p class="card-text" th:text="${classInfo.get(2)}"></p>
+                        <div class="dates-holder">
+                            <p class="card-text" th:text="${classInfo.get(3)}"></p>
+                            <i class="fas fa-circle-info card-info"></i>
+                        </div>
+
+                        <p class="card-text" th:text="${classInfo.get(4)}"></p>
+                        <p class="card-text" th:text="${classInfo.get(5)}"></p>
+                        <div class="session-info-container">
+                            <pre th:text="${classInfo.get(6)}"></pre>
+                        </div>
+                        <form action="/create-checkout-session" method="POST">
+                            <input type="hidden" name="classId" th:value="${classInfo.get(7)}">
+                            <button type="submit" th:class="'card-btn card-' +${stat.count % 4 + 1}">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                document.querySelectorAll(".card-info").forEach(icon => {
+                    icon.addEventListener("click", () => {
+
+                        const container = icon.closest(".card-content").querySelector(".session-info-container");
+                        if (getComputedStyle(container).display === "none") {
+                            container.style.display = "flex";
+
+                        } else {
+                            container.style.display = "none";
+
+                        }
+                    });
+                });
+                document.querySelectorAll(".session-info-container").forEach(container => {
+                    container.addEventListener("click", () => {
+                        container.style.display = "none";
+                    });
+                });
+            });
+        </script>
+        <div class="spacer">
+
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
